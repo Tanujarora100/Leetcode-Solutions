@@ -15,3 +15,5 @@
         }
       return arr;
     }
+//Add all the elements in the heap and run the loop till k
+//Make Sure to use Comparator to Set the heap as a Decreasing Heap and Then return the answer. 
