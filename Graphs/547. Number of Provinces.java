@@ -22,3 +22,27 @@
             }
         }
     }
+// BFS SOLUTION
+      public int findCircleNum(int[][] isConnected) {
+        Queue<Integer> q = new LinkedList<>();
+        int count = 0;
+        boolean[] visited = new boolean[isConnected.length];
+        for (int i = 0; i < isConnected.length; i++) {
+            if (visited[i] == false) {
+                count++;
+                q.add(i);
+                visited[i] = true;
+                while (!q.isEmpty()) {
+                    int curr = q.poll();
+                    for (int j = 0; j < isConnected[0].length; j++) {
+                        if (visited[j] == false && isConnected[curr][j] == 1) {
+                            q.add(j);
+                            visited[j] = true;
+                        }
+                    }
+                }
+            }
+
+        }
+        return count;
+    }
